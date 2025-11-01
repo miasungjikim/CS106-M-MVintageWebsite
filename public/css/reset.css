@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul[role="list"],
+ol[role="list"],
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    height: 100%;
+    font-family: Roboto, system-ui, -apple-system, "Segoe UI", BlinkMacSystemFont,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
