@@ -1,30 +1,28 @@
-/* Desktop */
 @media screen and (min-width: 769px) {
     header {
-        background-color: #8D030B;
-        height: 80px;
-        width: 100%;
-        color: #fff;
-
-    }
+            background-color: #8D030B;
+            height: 80px;
+            width: 100%;
+            color: #fff;
+    
+        }
 
     .card {
-        width: 520px;
-        background-color: #fff;
-        border-radius: 14px;
-        margin: 90px auto 0;
-        padding-left: 40px;
-        padding-bottom: 80px;
+            width: 520px;
+            background-color: #fff;
+            border-radius: 14px;
+            margin: 90px auto 0;
+            padding-left: 40px;
+            padding-bottom: 80px;
     }
-
     .card h2 {
         padding: 40px 0px;
     }
 
     .card .field {
-
-        margin-bottom: 20px;
-        width: 26rem;
+    
+    margin-bottom: 20px;
+    width: 26rem;
     }
 
     .card .field label,
@@ -32,11 +30,7 @@
         display: block;
         position: relative;
     }
-
-    .card .field label {
-        margin-bottom: 8px;
-    }
-
+    
     .card .field input {
         width: 100%;
         border: none;
@@ -67,18 +61,44 @@
         transition: background-color 0.4s ease;
     }
 
-        label{
+    label{
         font-family: 'Poppins';
         font-weight: 500;
         font-size:16px;
     }
+    
 
+    .forgetpw{
+        color:#A2A2A2;
+        font-size:14px;
+        padding-top:12px;
+        cursor:pointer
+    }
 
+    .forgetpw:hover{
+        color:#0077FF;
+        transition: color 0.4s ease;
+    }
 
+    .member{
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 16px;
+        font-weight: 500;
+        padding-top:24px;
+    }
 
-
+    .member a{
+        color: #0077FF;
+        cursor:pointer
+    }
+    
+    .member a:hover{
+        border-bottom: 1px solid #0077FF;
+    }
 
 }
+
 
 
 /* Mobile */
