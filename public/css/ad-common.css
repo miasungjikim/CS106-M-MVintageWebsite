@@ -1,0 +1,171 @@
+@media screen and (min-width: 769px) {
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        border: 1px solid #d2d2d2;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        margin-left: 300px;
+        padding-left: 30px;
+
+    }
+
+
+    header .topheader {
+        display: flex;
+    }
+
+
+    header .click {
+        display: flex;
+        position: absolute;
+        right: 40px;
+    }
+
+    header .click a {
+        display: flex;
+        color: #3C2F2F;
+        font-weight: 500;
+    }
+
+    header .click a:hover {
+        border-bottom: 1px solid #3C2F2F;
+    }
+
+    header .click a p {
+        padding-top: 4px;
+        padding-left: 2px;
+    }
+
+
+    header .topheader input {
+        width: 300px;
+        height: 34px;
+        border: none;
+        border-radius: 5px;
+    }
+
+
+
+
+
+
+
+
+    main {
+        display: flex;
+        flex: 1;
+        min-height: 0;
+    }
+
+    .sidebar {
+        color: #fff;
+        background-color: #8D030B;
+        width: 300px;
+        padding: 20px 0;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 2;
+        margin-top: -60px;
+    }
+
+    .sidebar .profilebox p:first-child {
+        text-align: center;
+        padding-top: 60px;
+        font-size: 14px;
+    }
+
+    .sidebar .profilebox .imgbox {
+        background-color: #ECE6E2;
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+        margin-top: 8px;
+
+    }
+
+    .sidebar .profilebox .name {
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 18px;
+        margin-top: 10px;
+
+    }
+
+    .sidebar .profilebox p:last-child {
+        text-align: center;
+        font-size: 13px;
+        cursor: pointer;
+        margin-top: 6px;
+    }
+
+    .sidebar .profilebox p:last-child a:hover {
+        border-bottom: 1px solid #fff;
+    }
+
+
+
+    .sidebar .content {
+        flex: 1;
+        padding: 30px;
+        background: #ECE6E2;
+        /* keep content in normal place */
+        padding-top: 30px;
+    }
+
+
+    .sidebar .imgbox img {
+        width: 142px;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+
+    .sidebar .btnbox {
+        margin-top: 40px;
+    }
+
+    .sidebar .btnbox p {
+        border: 1px solid #d5d5d550;
+        width: 100%;
+        padding-left: 30px;
+        padding: 20px 0px 20px 30px;
+        cursor: pointer;
+        background-color: #ECE6E2;
+        color: #3C2F2F;
+        font-family: 'Poppins';
+        font-weight: 600;
+    }
+
+    .sidebar .btnbox p:hover {
+        background-color: #B8916E;
+        transition: background-color 0.4s ease;
+    }
+
+    .sidebar .btnbox .selected {
+        background-color: #B8916E;
+    }
+
+    .logo {
+        /* background-color: yellowgreen; */
+        position: absolute;
+        left: 100px;
+        bottom: 40px;
+    }
+
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: green;
+    }
+}

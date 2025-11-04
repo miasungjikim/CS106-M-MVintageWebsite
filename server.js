@@ -53,8 +53,36 @@ app.post("/api/signup", (req, res) => {
 });
 
 
+// 2️⃣ Login API
+app.post("/api/login", (req, res) => {
+    const { email, password } = req.body;
 
+    //find users as email   
+    User.findOne({ email })
+        .then((user) => {
+            if (!user) {
+                return res.json({ success: false, message: "Email not found" });
+            }
 
+            //compare pw
+            const isMatch = bcrypt.compareSync(password, user.password);
+            if (!isMatch) {
+                return res.json({ success: false, message: "Incorrect password" });
+            }
+
+            //after success login -> check roles
+            if (user.role === "admin") {
+                res.json({ success: true, role: "admin", redirect: "ad-orders.html", fullname: user.fullname, email: user.email });
+            } else {
+                res.json({ success: true, role: "user", redirect: "index.html", fullname: user.fullname, email: user.email });
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+            res.json({ success: false, message: "👾 SERVER ERROR" });
+        });
+
+});
 
 
 

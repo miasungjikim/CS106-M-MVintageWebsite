@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ad-product-detail</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- connect css -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/ad-common.css" />
+    <link rel="stylesheet" href="./css/ad-product-detail.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
+
+
+</head>
+
+<body>
+    <header>
+        <div class="topheader">
+            <input type="text" placeholder="Search..." />
+            <div class="click">
+                <a href="#"><span><img src="./images/logout.svg" alt="signout" /></span>
+                    <p>SIGN OUT</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <div class="profilebox">
+                <p>Admin</p>
+                <div class="imgbox">
+                    <img src="./images/faceicon.png" alt="face" />
+                </div>
+                <p class="name">NAME KIM</p>
+                <p><a href="#">Edit Profile </a></p>
+            </div>
+            <div class="btnbox">
+                <a href="#">
+                    <p class="selected">Manage Orders</p>
+                </a>
+                <a href="#">
+                    <p>Manage Products</p>
+                </a>
+                <a href="#">
+                    <p>Manage Users</p>
+                </a>
+            </div>
+            <a href="#">
+                <p class="logo"><img src="./images/logowhite.svg" alt="logo" /></p>
+            </a>
+        </div>
+        <section class="content">
+            <h2>Product Detail</h2>
+
+            <form id="product-detail-form">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="field">
+                    <label for="category-main">Category</label>
+                    <input type="text" id="category-main" name="categoryMain">
+                </div>
+
+                <div class="field">
+                    <label for="category-sub">Subcategory</label>
+                    <input type="text" id="category-sub" name="categorySub">
+                </div>
+
+                <div class="field">
+                    <p>Stock</p>
+                    <div class="stock-row">
+                        <div class="stock-item">
+                            <label for="stock-s">S</label>
+                            <input type="Number" id="stock-s" name="stockS" min="0" value="0">
+                        </div>
+                        <div class="stock-item">
+                            <label for="stock-m">M</label>
+                            <input type="number" id="stock-m" name="stockM" min="0" value="0" />
+                        </div>
+                        <div class="stock-item">
+                            <label for="stock-l">L</label>
+                            <input type="number" id="stock-l" name="stockL" min="0" value="0" />
+                        </div>
+                        <div class="stock-item">
+                            <label for="stock-xl">XL</label>
+                            <input type="number" id="stock-xl" name="stockXL" min="0" value="0" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="image-url">Image</label>
+                    <input type="text" id="image-url" name="imageUrl">
+                </div>
+
+                <button type="submit" class="btn">Edit Products</button>
+
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

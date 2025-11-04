@@ -1,0 +1,69 @@
+@media screen and (min-width: 769px) {
+    section {
+        /* background-color: yellowgreen; */
+        padding-left: 60px;
+        padding-top: 60px;
+    }
+
+    section h2 {
+        padding-bottom: 50px;
+    }
+
+    section .field label {
+        font-size: 16px;
+        display: inline-block;
+        width: 100px;
+    }
+
+    section .field p {
+        font-size: 18px;
+    }
+
+    section .field input {
+        width: 500px;
+        height: 50px;
+        border: 1px solid #3C2F2F;
+        border-radius: 10px;
+    }
+
+    section .field .stock-row {
+        display: flex;
+    }
+
+    section .field .stock-item {
+        padding-left: 36px;
+    }
+
+    section .field .stock-item label {
+        width: 30px;
+    }
+
+    section .field .stock-item input {
+        padding-left: 10px;
+        width: 80px;
+    }
+
+    section .field,
+    section .stock-item {
+        margin: 20px 0px 20px 0px;
+    }
+
+    section .btn {
+        width: 196px;
+        height: 55px;
+        border: none;
+        border-radius: 10px;
+        background-color: #B8916E;
+        margin-top: 80px;
+        margin-left: 26rem;
+    }
+
+}
+
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: green;
+    }
+}

@@ -15,7 +15,9 @@
   <!-- connect css -->
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/common.css" />
-  <link rel="stylesheet" href="./css/signin.css" />
+  <link rel="stylesheet" href="./css/login.css" />
+
+  <script src="./js/login.js" defer></script>
 </head>
 
 <body>
@@ -23,20 +25,20 @@
   <main>
     <div class="card">
       <h2>Login</h2>
-      <form action="signinForm" method="post">
+      <form id="loginForm">
         <div class="field">
-          <label for="username">username</label>
-          <input type="text" id="username" name="username" />
+          <label for="email">email</label>
+          <input type="text" id="email" name="email" required />
         </div>
 
         <div class="field">
           <label for="password">password</label>
-          <input type="password" id="password" name="password" />
+          <input type="password" id="password" name="password" required />
           <p class="forgetpw"><a href="#">forget a password?</a></p>
         </div>
 
         <button type="submit">Login</button>
-        <p class="member">Not a member? <a href="./signup.html">Sign up</a></p>
+        <p class=" member">Not a member? <a href="./signup.html">Sign up</a></p>
       </form>
     </div>
   </main>

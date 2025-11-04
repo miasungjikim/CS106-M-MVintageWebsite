@@ -34,7 +34,7 @@ if (signupForm) {
 
                 if (result.success) {
                     alert(`Welcome ${fullname}`);
-                    window.location.href = "./signin.html";
+                    window.location.href = "./login.html";
                 } else {
                     alert(result.error || "There is an error. Try again.")
                 }
