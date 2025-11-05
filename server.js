@@ -5,6 +5,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const User = require("./models/User");
+const Product = require("./models/Product")
 const app = express();
 
 //Connect mongoDB
@@ -81,8 +82,72 @@ app.post("/api/login", (req, res) => {
             console.log(err);
             res.json({ success: false, message: "👾 SERVER ERROR" });
         });
-
 });
+
+//3️⃣ Products
+//3-1. Read Single Product
+app.get("/api/products/:id", async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+
+        if (!product) {
+            return res.status(404).json({ messaage: "Product not found" });
+        }
+        res.json(product);
+    } catch (err) {
+        console.error("ERROR GET", err);
+        res.status(500).json({ message: "FAILED TO GET PRODUCT" });
+    }
+});
+
+//3-2. Create product
+app.post("/api/products", async (req, res) => {
+    try {
+        const {
+            name,
+            price,
+            categoryMain,
+            categorySub,
+            description,
+            imageUrl,
+            stockS,
+            stockM,
+            stockL,
+            stockXL,
+        } = req.body;
+
+        //new product object
+        const newProduct = new Product({
+            name,
+            price,
+            category: { main: categoryMain, sub: categorySub },
+            description,
+            images: imageUrl ? [imageUrl] : [],
+            sizes: [
+                { size: "S", stock: stockS || 0 },
+                { size: "M", stock: stockM || 0 },
+                { size: "L", stock: stockL || 0 },
+                { size: "XL", stock: stockXL || 0 },
+            ],
+        });
+
+        //Save to DB
+        const savedProduct = await newProduct.save(); //save to mongoDB 
+        res.status(201).json(savedProduct); //server --> result --> client
+
+    } catch (err) {
+        console.error("ERROR CREATING PRODUCT", err);
+        res.status(500).json({ message: "FAILED TO CREATE PRODUCT" });
+    }
+});
+
+//PRODUCT ROUTE 
+app.get("/api/products", async (req, res) => {
+    const products = await Product.find();
+    res.json(products);
+});
+
+
 
 
 

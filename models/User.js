@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema(
         }
     },
     {
-        timestamp: true //Create createdAt, updatedAt
+        timestamp: true, versionKey: false //Create createdAt, updatedAt
     }
 );
 

@@ -1,15 +1,19 @@
 @media screen and (min-width: 769px) {
+
+
+
     section {
         /* background-color: yellowgreen; */
         padding-left: 60px;
         padding-top: 60px;
     }
 
+
     section h2 {
         padding-bottom: 50px;
     }
 
-    section .field label {
+    section label {
         font-size: 16px;
         display: inline-block;
         width: 100px;
@@ -19,12 +23,41 @@
         font-size: 18px;
     }
 
-    section .field input {
+    section .image-field input {
+        width: 380px;
+        height: 50px;
+        border: 1px solid #3C2F2F;
+        border-radius: 10px;
+        margin-right: 28px;
+
+    }
+
+    section .image-field button {
+        width: 96px;
+        height: 55px;
+        background-color: #B8916E;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    section .image-field .image-status {
+        /* background-color: yellowgreen; */
+        padding-left: 110px;
+        padding-top: 10px;
+        font-size: 14px;
+    }
+
+    section .field input,
+    section .field select {
         width: 500px;
         height: 50px;
         border: 1px solid #3C2F2F;
         border-radius: 10px;
-        padding-left: 20px;
+    }
+
+    section .field select {
+        padding-left: 10px;
+
     }
 
     section .field .stock-row {
@@ -32,7 +65,7 @@
     }
 
     section .field .stock-item {
-        padding-left: 36px;
+        padding-left: 23px;
     }
 
     section .field .stock-item label {
@@ -64,6 +97,8 @@
         transition: background-color 0.4s ease;
         color: #fff;
     }
+
+
 }
 
 
