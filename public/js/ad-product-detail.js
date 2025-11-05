@@ -7,6 +7,8 @@ console.log("🔍 productId:", productId);
 
 //2. Bring factor
 const nameInput = document.getElementById("name");
+const priceInput = document.getElementById("price");
+const descriptionInput = document.getElementById("description");
 const categoryMainInput = document.getElementById("category-main");
 const categorySubInput = document.getElementById("category-sub");
 const stockSInput = document.getElementById("stock-s");
@@ -21,6 +23,9 @@ if (productId) {
         .then(res => res.json())
         .then(product => {
             nameInput.value = product.name || "";
+            priceInput.value = product.price || "";
+            descriptionInput.value = product.description || "";
+
             categoryMainInput.value = product.category?.main || ""; //if product.category exist bring it, else undefined
             categorySubInput.value = product.category?.sub || "";
 
@@ -41,5 +46,14 @@ if (productId) {
             });
         });
 } else {
-    alert("NO PRODUCT ID FOUND!!!!!!")
+    alert("NO PRODUCT ID FOUND!!!!!!");
+}
+
+//move to edit 
+const editBtn = document.getElementById("edit-product-btn");
+
+if (editBtn && productId) {
+    editBtn.addEventListener("click", function () {
+        window.location.href = `./ad-product-update.html?id=${productId}`;
+    });
 }

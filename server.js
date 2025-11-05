@@ -100,6 +100,12 @@ app.get("/api/products/:id", async (req, res) => {
     }
 });
 
+//PRODUCT ROUTE 
+app.get("/api/products", async (req, res) => {
+    const products = await Product.find();
+    res.json(products);
+});
+
 //3-2. Create product
 app.post("/api/products", async (req, res) => {
     try {
@@ -141,11 +147,53 @@ app.post("/api/products", async (req, res) => {
     }
 });
 
-//PRODUCT ROUTE 
-app.get("/api/products", async (req, res) => {
-    const products = await Product.find();
-    res.json(products);
+
+
+//3-3. update product
+app.put("/api/products/:id", async (req, res) => {
+    try {
+        const {
+            name,
+            price,
+            categoryMain,
+            categorySub,
+            description,
+            imageUrl,
+            stockS,
+            stockM,
+            stockL,
+            stockXL,
+        } = req.body;
+
+        const updatedProduct = await Product.findByIdAndUpdate(
+            req.params.id,
+            {
+                name,
+                price,
+                category: { main: categoryMain, sub: categorySub },
+                description,
+                images: imageUrl ? [imageUrl] : [],
+                sizes: [
+                    { size: "S", stock: stockS || 0 },
+                    { size: "M", stock: stockM || 0 },
+                    { size: "L", stock: stockL || 0 },
+                    { size: "XL", stock: stockXL || 0 },
+                ],
+            },
+            { new: true }
+        );
+
+        if (!updatedProduct) {
+            return res.status(404).json({ message: "Product not found" });
+        }
+
+        res.json(updatedProduct);
+    } catch (err) {
+        console.error("ERROR UPDATING PRODUCT", err);
+        res.status(500).json({ message: "FAILED TO UPDATE PRODUCT" });
+    }
 });
+
 
 
 

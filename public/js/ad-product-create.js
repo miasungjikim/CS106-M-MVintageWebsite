@@ -36,7 +36,7 @@ form.addEventListener("submit", function (e) {
 
     // 입력값 수집
     const name = document.getElementById("name").value;
-    const price = document.getElementById("price")?.value || 0; // 혹시 나중에 price 추가되면 대비
+    const price = document.getElementById("price")?.value || 0;
     const categoryMain = document.getElementById("category-main").value;
     const categorySub = document.getElementById("category-sub").value;
     const description = document.getElementById("description")?.value || "";

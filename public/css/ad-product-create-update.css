@@ -29,7 +29,7 @@
         border: 1px solid #3C2F2F;
         border-radius: 10px;
         margin-right: 28px;
-
+        padding-left: 12px;
     }
 
     section .image-field button {
@@ -53,6 +53,7 @@
         height: 50px;
         border: 1px solid #3C2F2F;
         border-radius: 10px;
+        padding-left: 12px;
     }
 
     section .field select {
