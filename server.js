@@ -100,7 +100,7 @@ app.get("/api/products/:id", async (req, res) => {
     }
 });
 
-//PRODUCT ROUTE 
+//Show all products
 app.get("/api/products", async (req, res) => {
     const products = await Product.find();
     res.json(products);
