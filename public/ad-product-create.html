@@ -124,9 +124,12 @@
                 </div>
 
                 <div class="image-field">
-                    <label for="image-url">Image</label>
-                    <input type="text" id="image-url" name="imageUrl">
-                    <button type="button" id="find-image-btn">Find</button>
+                    <label for="image-file">Image</label>
+
+                    <input type="file" id="image-file" accept="image/*" hidden>
+                    <input type="text" id="image-url" name="imageUrl" placeholder="Upload or paste image URL" readonly>
+
+                    <button type="button" id="find-image-btn">Upload</button>
                 </div>
 
                 <button type="submit" class="btn">Save Products</button>

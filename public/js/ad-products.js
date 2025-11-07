@@ -48,6 +48,20 @@ fetch("/api/products")
             tr.appendChild(tdDetails);
 
             tbody.appendChild(tr);
+
+            // delete
+            const deleteLink = document.createElement("a");
+            deleteLink.textContent = "Delete";
+            deleteLink.href = "#"; // 기본 링크 동작 막기 위해 # 사용
+
+            deleteLink.addEventListener("click", async (e) => {
+                e.preventDefault(); // 페이지 새로고침 방지
+                if (!confirm(`Delete "${product.name}"?`)) return;
+                await fetch(`/api/products/${product._id}`, { method: "DELETE" });
+                tr.remove();
+            });
+
+            tdDetails.appendChild(deleteLink);
         });
     })
     .catch((err) => {

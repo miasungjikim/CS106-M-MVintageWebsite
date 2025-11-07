@@ -26,6 +26,42 @@ categoryMainSelect.addEventListener("change", function () {
     });
 });
 
+//connect google api
+
+const fileInput = document.getElementById("image-file");
+const imageUrlInput = document.getElementById("image-url");
+const uploadBtn = document.getElementById("find-image-btn");
+
+
+uploadBtn.addEventListener("click", () => fileInput.click());
+
+fileInput.addEventListener("change", async () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+        const res = await fetch("/api/upload-image", {
+            method: "POST",
+            body: formData,
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || "Upload failed");
+
+        imageUrlInput.value = data.imageUrl;
+        alert("Image uploaded successfully!");
+    } catch (err) {
+        console.error(err);
+        alert("Failed to upload image");
+    }
+});
+
+
+
+
+
 
 //backend.js
 
@@ -75,3 +111,4 @@ form.addEventListener("submit", function (e) {
         })
         .catch(() => alert("FAILED TO ADD PRODUCT"));
 });
+

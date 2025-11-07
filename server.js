@@ -7,6 +7,18 @@ require("dotenv").config();
 const User = require("./models/User");
 const Product = require("./models/Product")
 const app = express();
+const multer = require("multer");
+const { Storage } = require("@google-cloud/storage");
+
+const upload = multer({ storage: multer.memoryStorage() });
+
+//account key & projectID
+const storage = new Storage({
+    keyFilename: path.join(__dirname, "key.json"),
+    projectId: "coral-core-476021-d6",
+});
+
+const bucket = storage.bucket(process.env.GCS_BUCKET);
 
 //Connect mongoDB
 mongoose.connect(process.env.MONGODB_URI)
@@ -191,6 +203,56 @@ app.put("/api/products/:id", async (req, res) => {
     } catch (err) {
         console.error("ERROR UPDATING PRODUCT", err);
         res.status(500).json({ message: "FAILED TO UPDATE PRODUCT" });
+    }
+});
+
+//3-4 Image upload (google api storage)
+app.post("/api/upload-image", upload.single("image"), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ message: "no file uploaded" });
+        }
+
+        const blob = bucket.file(Date.now() + "-" + req.file.originalname);
+        const blobStream = blob.createWriteStream({
+            metadata: { contentType: req.file.mimetype },
+        });
+
+        blobStream.on("error", (err) => {
+            console.error("UPLOAD ERROR", err);
+            res.status(500).json({ message: "Failed to upload image" });
+        });
+
+        blobStream.on("finish", async () => {
+
+            const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+            res.status(200).json({ imageUrl: publicUrl });
+        });
+
+        blobStream.end(req.file.buffer);
+
+
+
+        //3.5 Delete product api
+        app.delete("/api/products/:id", async (req, res) => {
+            try {
+                const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+
+                if (!deletedProduct) {
+                    return res.status(404).json({ message: "Product not found" });
+                }
+
+                res.json({ success: true, message: "Product deleted successfully" });
+            } catch (err) {
+                console.error("DELETE ERROR", err);
+                res.status(500).json({ message: "Failed to delete product" });
+            }
+        });
+
+
+    } catch (err) {
+        console.error("upload error", err);
+        res.status(500).json({ message: "👾SERVER ERROR" })
     }
 });
 
