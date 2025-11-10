@@ -20,6 +20,7 @@ fetch("/api/products")
             const tdCheck = document.createElement("td");
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
+            tdCheck.appendChild(checkbox);
 
             //name
             const tdName = document.createElement("td");
