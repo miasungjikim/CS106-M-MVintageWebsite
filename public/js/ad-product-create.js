@@ -7,7 +7,7 @@ const subcategories = {
     Pants: ["Short pants", "Long pants"],
     Dresses: ["Day dress", "Vintage dress"],
     Outerwear: ["Jacket", "Coat", "Cardigan"],
-    Accessories: ["Caps/Hats", "Socks", "Belts", "Bags"],
+    Accessories: ["Caps/Hats", "Socks", "Belts", "Shawl"],
 };
 
 categoryMainSelect.addEventListener("change", function () {
