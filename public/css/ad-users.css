@@ -161,6 +161,92 @@
         bottom: 40px;
     }
 
+    .content {
+        flex: 1;
+        padding: 40px 60px;
+        background-color: #fff;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    /* Page title */
+    .content h2 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #3a2c29;
+        margin-bottom: 25px;
+    }
+
+    /* Add Admin button */
+    #addAdminBtn {
+        background-color: #B8916E;
+        color: white;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        float: right;
+        margin-bottom: 20px;
+    }
+
+    #addAdminBtn:hover {
+        background-color: #a27959;
+    }
+
+    /* Table styling */
+    .users-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        /* border-radius: 10px; */
+        overflow: hidden;
+        font-size: 14px;
+    }
+
+    .users-table thead {
+        /* background-color: #d9c3b1; */
+        border-top: 2px solid #3b2b23;
+        color: #3a2c29;
+        font-weight: 600;
+    }
+
+    .users-table th,
+    .users-table td {
+        padding: 14px 18px;
+        text-align: left;
+        border-bottom: 1px solid #e3d7cf;
+    }
+
+    .users-table th:first-child,
+    .users-table td:first-child {
+        width: 40px;
+        text-align: center;
+    }
+
+    .users-table th:last-child,
+    .users-table td:last-child {
+        width: 80px;
+        text-align: right;
+    }
+
+
+
+    /* Details button (inside table) */
+    .users-table button {
+        background: none;
+        border: none;
+        color: #B8916E;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .users-table button:hover {
+        text-decoration: underline;
+    }
+
+
+
 }
 
 /* Mobile */

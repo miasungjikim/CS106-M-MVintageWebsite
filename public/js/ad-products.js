@@ -4,7 +4,6 @@ addBtn.addEventListener("click", () => {
     window.location.href = "./ad-product-create.html";
 });
 
-
 //2. load all products as table
 const tbody = document.getElementById("products-tbody");
 
@@ -16,26 +15,26 @@ fetch("/api/products")
         products.forEach((product) => {
             const tr = document.createElement("tr");
 
-            //make checkbox
+            // make checkbox
             const tdCheck = document.createElement("td");
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             tdCheck.appendChild(checkbox);
 
-            //name
+            // name
             const tdName = document.createElement("td");
             tdName.textContent = product.name || "";
 
-            //category main
+            // category main
             const tdCategory = document.createElement("td");
             tdCategory.textContent = product.category?.main || "";
 
-            //stock conditions 
+            // stock conditions 
             const tdStock = document.createElement("td");
-            const hasStock = (product.sizes || []).some(s => Number(s.stock) > 0);
+            const hasStock = (product.sizes || []).some((s) => Number(s.stock) > 0);
             tdStock.textContent = hasStock ? "O" : "X";
 
-            //move to the detail page
+            // move to the detail page
             const tdDetails = document.createElement("td");
             const detailsLink = document.createElement("a");
             detailsLink.textContent = "Details";
@@ -53,13 +52,40 @@ fetch("/api/products")
             // delete
             const deleteLink = document.createElement("a");
             deleteLink.textContent = "Delete";
-            deleteLink.href = "#"; // 기본 링크 동작 막기 위해 # 사용
+            deleteLink.href = "#"; // prevent default link behavior
 
             deleteLink.addEventListener("click", async (e) => {
-                e.preventDefault(); // 페이지 새로고침 방지
+                e.preventDefault(); // prevent page reload
+
                 if (!confirm(`Delete "${product.name}"?`)) return;
-                await fetch(`/api/products/${product._id}`, { method: "DELETE" });
-                tr.remove();
+
+                try {
+                    const res = await fetch(`/api/products/${product._id}`, {
+                        method: "DELETE",
+                    });
+
+                    // check HTTP status
+                    if (!res.ok) {
+                        alert("Failed to delete product (server error).");
+                        console.error("Delete failed:", res.status, res.statusText);
+                        return;
+                    }
+
+                    const result = await res.json();
+
+                    // check response body
+                    if (!result.success) {
+                        alert("Failed to delete product in database.");
+                        console.error("Delete failed:", result);
+                        return;
+                    }
+
+                    // only remove row if delete was successful
+                    tr.remove();
+                } catch (err) {
+                    console.error("Delete request error:", err);
+                    alert("Network error while deleting product.");
+                }
             });
 
             tdDetails.appendChild(deleteLink);

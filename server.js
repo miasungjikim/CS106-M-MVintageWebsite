@@ -232,31 +232,40 @@ app.post("/api/upload-image", upload.single("image"), async (req, res) => {
         blobStream.end(req.file.buffer);
 
 
-
-        //3.5 Delete product api
-        app.delete("/api/products/:id", async (req, res) => {
-            try {
-                const deletedProduct = await Product.findByIdAndDelete(req.params.id);
-
-                if (!deletedProduct) {
-                    return res.status(404).json({ message: "Product not found" });
-                }
-
-                res.json({ success: true, message: "Product deleted successfully" });
-            } catch (err) {
-                console.error("DELETE ERROR", err);
-                res.status(500).json({ message: "Failed to delete product" });
-            }
-        });
-
-
     } catch (err) {
         console.error("upload error", err);
         res.status(500).json({ message: "👾SERVER ERROR" })
     }
 });
 
+//3.5 Delete product api
+app.delete("/api/products/:id", async (req, res) => {
+    try {
+        const deletedProduct = await Product.findByIdAndDelete(req.params.id);
 
+        if (!deletedProduct) {
+            return res.status(404).json({ message: "Product not found" });
+        }
+
+        res.json({ success: true, message: "Product deleted successfully" });
+    } catch (err) {
+        console.error("DELETE ERROR", err);
+        res.status(500).json({ message: "Failed to delete product" });
+    }
+});
+
+
+
+//4️⃣ USERS ...
+app.get("/api/users", async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (err) {
+        console.error("Failed to fetch users:", err);
+        res.status(500).json({ message: "Failed to fetch users" });
+    }
+});
 
 
 

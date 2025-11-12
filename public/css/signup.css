@@ -12,7 +12,7 @@
         width: 520px;
         background-color: #fff;
         border-radius: 14px;
-        margin: 90px auto 0;
+        margin: 80px auto 100px;
         padding-left: 40px;
         padding-bottom: 80px;
     }
@@ -67,10 +67,10 @@
         transition: background-color 0.4s ease;
     }
 
-        label{
+    label {
         font-family: 'Poppins';
         font-weight: 500;
-        font-size:16px;
+        font-size: 16px;
     }
 
 

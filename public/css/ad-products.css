@@ -1,60 +1,64 @@
+/* ad-products.css */
+
 @media screen and (min-width: 769px) {
+
+    /* Layout */
     section.content {
+        flex: 1;
         margin: 40px auto;
         background-color: #fff;
         padding: 40px 80px 20px 80px;
-        overflow-y: scroll;
-    }
-
-
-    section.content h2 {
-        font-size: 26px;
-        font-weight: 600;
-        margin-bottom: 24px;
-    }
-
-
-    #addbtn {
-        float: right;
-        padding: 10px 22px;
-        background-color: #B8916E;
-        color: #fff;
-        border: none;
+        overflow-y: auto;
+        box-sizing: border-box;
         border-radius: 10px;
+    }
+
+    /* Page title */
+    section.content h2 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #3a2c29;
+        margin-bottom: 25px;
+    }
+
+    /* Add button */
+    #addbtn {
+        background-color: #b8916e;
+        color: white;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 8px;
         font-size: 14px;
         cursor: pointer;
+        float: right;
         margin-top: -32px;
         margin-bottom: 32px;
-
     }
 
     #addbtn:hover {
-        background-color: #9d724f;
+        background-color: #a27959;
     }
 
-
+    /* Table styling */
     .products-table {
         width: 100%;
         border-collapse: collapse;
+        background-color: #fff;
+        font-size: 14px;
         margin-top: 40px;
-        font-size: 0.95rem;
-
     }
 
     .products-table thead {
+        color: #3a2c29;
+        font-weight: 600;
         border-top: 2px solid #3b2b23;
     }
 
     .products-table th,
     .products-table td {
         text-align: left;
-        padding: 12px 8px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .products-table th {
-        font-family: "roboto";
-        font-weight: 600;
+        padding: 14px 18px;
+        border-bottom: 1px solid #e3d7cf;
     }
 
     .products-table th:first-child,
@@ -69,13 +73,36 @@
     }
 
     .products-table a {
-        color: #3b2b23;
-        font-size: 12px;
-        border-bottom: 1px solid #3b2b23;
-        margin-right: 20px;
+        color: #b8916e;
+        font-weight: 500;
+        font-size: 13px;
+        cursor: pointer;
+        margin: 0px 10px 0px 10px;
+    }
+
+    .products-table a:hover {
+        text-decoration: underline;
     }
 
 
+}
 
+/* Mobile */
+@media screen and (max-width: 768px) {
+    section.content {
+        padding: 20px;
+    }
 
+    #addbtn {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .products-table th,
+    .products-table td {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
 }

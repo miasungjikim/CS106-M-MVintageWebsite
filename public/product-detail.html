@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-detail</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/user-common.css">
+    <link rel="stylesheet" href="./css/product-detail.css">
+
+    <script src="./js/product-detail.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="images/v62_38.png" alt="Vintage logo" />
+
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+            <a href="#">Tops</a>
+            <a href="#">Pants</a>
+            <a href="#">Dresses</a>
+            <a href="#">Outerwear</a>
+            <a href="#">Accessories</a>
+        </nav>
+
+        <div class="icons">
+            <!-- Search -->
+            <button class="icon-btn" id="openSearch" aria-label="Open search" title="Search">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M10 2a8 8 0 015.292 13.708l4 4a1 1 0 01-1.414 1.414l-4-4A8 8 0 1110 2zm0 2a6 6 0 100 12A6 6 0 0010 4z" />
+                </svg>
+            </button>
+
+            <!-- Profile -->
+            <button class="icon-btn" id="goProfile" aria-label="Go to sign in" title="Sign in">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2a5 5 0 110 10 5 5 0 010-10zm0 12c4.418 0 8 2.239 8 5v1H4v-1c0-2.761 3.582-5 8-5z" />
+                </svg>
+            </button>
+
+            <!-- Cart -->
+            <button class="icon-btn cart-badge" id="cartBtn" aria-label="Cart" title="Cart">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M7 4h-2a1 1 0 100 2h1l1.6 8.2A2 2 0 0010.56 16h5.88a2 2 0 001.96-1.6L20 7H7.42l-.28-1.4A1 1 0 007 4zm11 16a2 2 0 11-4 0 2 2 0 014 0zm-8 0a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span class="count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="product-detail container">
+        <div class="breadcrumb"></div>
+
+        <div class="product-content">
+            <div class="product-image">
+                <img id="productImage" src="" alt="Product image">
+            </div>
+
+            <div class="product-info">
+                <h2 id="productName">Product Name</h2>
+                <p class="price" id="productPrice">nzd $0.00</p>
+
+                <h4>Description</h4>
+                <p id="productDescription">
+                    Product description will appear here.
+                </p>
+
+                <p id="productColor">multicolor</p>
+
+                <div class="sizes">
+                    <span>size</span>
+                    <div class="size-options">
+                        <button class="size-btn active">XS</button>
+                        <button class="size-btn">S</button>
+                        <button class="size-btn">M</button>
+                        <button class="size-btn">L</button>
+                    </div>
+                    <a href="#" class="size-guide">size guide?</a>
+                </div>
+
+                <div class="buttons">
+                    <button id="buyNow" class="btn white">Buy Now</button>
+                    <button id="addToBag" class="btn brown">Add to bag</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>About us / Contact us | Privacy Policy | Terms of Use</p>
+        <p>© All rights reserved. 2025.</p>
+    </footer>
+</body>
+
+</html>
