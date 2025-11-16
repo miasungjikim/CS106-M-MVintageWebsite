@@ -9,6 +9,7 @@ const Product = require("./models/Product")
 const app = express();
 const multer = require("multer");
 const { Storage } = require("@google-cloud/storage");
+const Order = require("./models/Order");
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -266,6 +267,80 @@ app.get("/api/users", async (req, res) => {
         res.status(500).json({ message: "Failed to fetch users" });
     }
 });
+
+
+//5️⃣ order API 
+// Create Order
+app.post("/api/orders", async (req, res) => {
+    try {
+        const {
+            fullname,
+            email,
+            productId,
+            name,
+            price,
+            size,
+            qty
+        } = req.body;
+
+        // new order object
+        const newOrder = new Order({
+            fullname,
+            email,
+            product: {
+                productId,
+                name,
+                price,
+                size,
+                qty: qty || 1
+            },
+            status: "PAID"
+        });
+
+        const savedOrder = await newOrder.save();
+        res.status(201).json(savedOrder);
+
+    } catch (err) {
+        console.error("ORDER CREATE ERROR", err);
+        res.status(500).json({ message: "Failed to create order" });
+    }
+});
+
+// Read all orders (Admin)
+app.get("/api/orders", async (req, res) => {
+    try {
+        const orders = await Order.find().sort({ createdAt: -1 });
+        res.json(orders);
+    } catch (err) {
+        console.error("FETCH ORDERS ERROR", err);
+        res.status(500).json({ message: "Failed to fetch orders" });
+    }
+});
+
+// Update order status
+app.put("/api/orders/:id", async (req, res) => {
+    try {
+        const { status } = req.body;
+
+        const updatedOrder = await Order.findByIdAndUpdate(
+            req.params.id,
+            { status },
+            { new: true }
+        );
+
+        if (!updatedOrder) {
+            return res.status(404).json({ message: "Order not found" });
+        }
+
+        res.json(updatedOrder);
+
+    } catch (err) {
+        console.error("ORDER UPDATE ERROR", err);
+        res.status(500).json({ message: "Failed to update order" });
+    }
+});
+
+
 
 
 

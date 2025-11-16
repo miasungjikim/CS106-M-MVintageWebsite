@@ -23,7 +23,7 @@ const productDesc = document.getElementById("productDescription");
 const productImg = document.getElementById("productImage");
 
 // login user for the later data .. 
-const user = JSON.parse(localStorage.getItem("loggedInUser")); // { _id, name, email, ... }
+const user = JSON.parse(localStorage.getItem("user")); // { _id, name, email, ... }
 
 // bring products 
 async function loadProduct() {
@@ -48,6 +48,7 @@ async function loadProduct() {
 }
 
 // buy button
+// buy button
 document.getElementById("buyNow").addEventListener("click", async () => {
     if (!user) {
         alert("Please sign in before purchasing.");
@@ -55,12 +56,30 @@ document.getElementById("buyNow").addEventListener("click", async () => {
         return;
     }
 
+    // bring size
+    const selectedSize = document.querySelector(".size-btn.active")?.textContent;
+    if (!selectedSize) {
+        alert("Please select a size.");
+        return;
+    }
+
     try {
+        // product detail bringing 
+        const resProduct = await fetch(`/api/products/${productId}`);
+        const product = await resProduct.json();
+
+        // Order payload create
         const orderData = {
-            userId: user._id,
+            fullname: user.fullname,
+            email: user.email,
             productId: productId,
+            name: product.name,
+            price: product.price,
+            size: selectedSize,
+            qty: 1
         };
 
+        // server
         const res = await fetch("/api/orders", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -70,13 +89,13 @@ document.getElementById("buyNow").addEventListener("click", async () => {
         const data = await res.json();
 
         if (res.ok) {
-            alert("Order placed successfully!");
+            alert("Purchase completed!\n(Sprint 2: Add payment details like card number.)");
         } else {
             alert(data.message);
         }
     } catch (err) {
         console.error("Order failed:", err);
-        alert("Error: placing the order.");
+        alert("Error placing the order.");
     }
 });
 

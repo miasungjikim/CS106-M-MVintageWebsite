@@ -3,15 +3,14 @@
 @media screen and (min-width: 769px) {
 
     /* Layout */
-    section.content {
+    .content {
         flex: 1;
-        margin: 40px auto;
+        padding: 40px 60px;
         background-color: #fff;
-        padding: 40px 80px 20px 80px;
-        overflow-y: auto;
+        min-height: 100vh;
         box-sizing: border-box;
-        border-radius: 10px;
     }
+
 
     /* Page title */
     section.content h2 {
