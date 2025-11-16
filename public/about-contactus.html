@@ -422,222 +422,85 @@
     </div>
   </div>
 
+<!-- ABOUT US -->
+<section id="about" style="text-align:center; max-width:900px; margin:4rem auto;">
+  <h2 style="font-family:'Caprasimo',cursive; color:#8d030b; font-size:1.9rem; margin-bottom:1rem;">ABOUT US</h2>
+  <p style="max-width:700px; margin:0 auto 1.2rem; line-height:1.7;">
+    We’re a small team of vintage-obsessed designers building modern pieces with old-soul charm. From floral camp
+    shirts to bow-neck wool sets and tapestry belts, our collections blend timeless silhouettes with easy, everyday
+    wear.
+  </p>
+  <p style="max-width:700px; margin:0 auto 1.2rem; line-height:1.7;">
+    We started as weekend thrifters and pattern hunters, sketching from heirloom garments and family photo albums.
+    What began as a tiny market stall grew into this shop—still independent, still detail-driven, and forever in love
+    with the romance of vintage.
+  </p>
+  <p style="max-width:700px; margin:0 auto 1.2rem; line-height:1.7;">
+    Clothes should last. We provide care tips with each piece and offer simple repair guidance so your favorites stay
+    in rotation for years.
+  </p>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>"Celebrate timeless style with handpicked vintage pieces for the modern you"</h1>
-  </section>
+<!-- CONTACT US -->
+<section id="contact" style="text-align:center; max-width:700px; margin:4rem auto;">
+  <h2 style="font-family:'Caprasimo',cursive; color:#8d030b; font-size:1.9rem; margin-bottom:1rem;">CONTACT US</h2>
+  <p style="color:#3c2f2f; font-size:1rem; margin-bottom:2rem;">
+    We’d love to hear from you — whether it’s about sizing, styling, or custom orders!
+  </p>
 
+  <form id="contactForm" action="/api/contact" method="POST" style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+    <label for="fullname" style="align-self:flex-start; font-weight:600; color:#3c2f2f;">Full Name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Your full name" required
+      style="width:100%; max-width:600px; padding:0.75rem; border:1px solid #ccc; border-radius:8px; font-family:'Poppins',sans-serif; font-size:1rem;" />
 
+    <label for="email" style="align-self:flex-start; font-weight:600; color:#3c2f2f;">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email address" required
+      style="width:100%; max-width:600px; padding:0.75rem; border:1px solid #ccc; border-radius:8px; font-family:'Poppins',sans-serif; font-size:1rem;" />
 
-  <!-- CONTENT -->
-  <main class="container">
-    <!-- TOPS -->
-    <section class="category" id="tops">
-      <h2>Tops</h2>
-      <div class="grid">
-        <article class="card" data-name="Tabard shirt">
-          <img src="images/placeholder.png" alt="Tabard shirt" />
-          <h4>Tabard shirt</h4>
-          <p>Orange</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
+    <label for="message" style="align-self:flex-start; font-weight:600; color:#3c2f2f;">Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required
+      style="width:100%; max-width:600px; padding:0.75rem; border:1px solid #ccc; border-radius:8px; font-family:'Poppins',sans-serif; font-size:1rem; resize:vertical;"></textarea>
 
-        <article class="card" data-name="Floral top">
-          <img src="images/placeholder.png" alt="Floral top" />
-          <h4>Floral top</h4>
-          <p>Multicolor</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Allied top">
-          <img src="images/placeholder.png" alt="Allied top" />
-          <h4>Allied top</h4>
-          <p>Camel</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card"  data-name="Dotted shirt">
-          <img src="images/placeholder.png" alt="Dotted shirt" />
-          <h4>Dotted shirt</h4>
-          <p>Chili Red</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-      </div>
-      <a class="view-all" href="products.html?category=Tops">VIEW ALL</a>
-    </section>
-
-    <!-- PANTS -->
-    <section class="category" id="pants">
-      <h2>Pants</h2>
-      <div class="grid">
-        <article class="card"  data-name="Proclaimer pant">
-          <img src="images/placeholder.png" alt="Proclaimer pant" />
-          <h4>Proclaimer pant</h4>
-          <p>Taupe moss</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Pillar jean">
-          <img src="images/placeholder.png" alt="Pillar jean" />
-          <h4>Pillar jean</h4>
-          <p>Dusky orange</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Florence jean">
-          <img src="images/placeholder.png" alt="Florence jean" />
-          <h4>Florence jean</h4>
-          <p>Multicolor</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Sear pintuck pant">
-          <img src="images/placeholder.png" alt="Sear pintuck pant" />
-          <h4>Sear pintuck pant</h4>
-          <p>Ink melange</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-      </div>
-      <a class="view-all" href="products.html?category=Pants">VIEW ALL</a>
-    </section>
-
-    <!-- DRESSES -->
-    <section class="category" id="dresses">
-      <h2>Dresses</h2>
-      <div class="grid">
-        <article class="card" data-name="Checkered dress">
-          <img src="images/placeholder.png"  alt="Checkered dress" />
-          <h4>Checkerd dress</h4>
-          <p>Red</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Region dress">
-          <img src="images/placeholder.png" alt="Region dress" />
-          <h4>Region dress</h4>
-          <p>Red striped</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Lyrical dress">
-          <img src="images/placeholder.png" alt="Lyrical dress" />
-          <h4>Lyrical dress</h4>
-          <p>Cream</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Embroidered floral">
-          <img src="images/placeholder.png" alt="Embroidered floral" />
-          <h4>Embroidered floral</h4>
-          <p>Beige</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-      </div>
-      <a class="view-all" href="products.html?category=Dress">VIEW ALL</a>
-    </section>
-
-    <!-- OUTERWEAR -->
-    <section class="category" id="outerwear">
-      <h2>Outerwear</h2>
-      <div class="grid">
-        <article class="card" data-name="Pea coat">
-          <img src="images/placeholder.png" alt="Pea coat" />
-          <h4>Pea coat</h4>
-          <p>Beige</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Chesterfield">
-          <img src="images/placeholder.png" alt="Chesterfield" />
-          <h4>Chesterfield</h4>
-          <p>Orange</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Ulster coat">
-          <img src="images/placeholder.png" alt="Ulster coat"/>
-          <h4>Ulster coat</h4>
-          <p>Green</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Medieval retro">
-          <img src="images/placeholder.png" alt="Medieval retro" />
-          <h4>Medieval retro</h4>
-          <p>Cream</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-      </div>
-      <a class="view-all" href="products.html?category=Outerwear">VIEW ALL</a>
-    </section>
-
-    <!-- ACCESSORIES -->
-    <section class="category" id="accessories">
-      <h2>Accessories</h2>
-      <div class="grid">
-        <article class="card" data-name="Corset belt">
-          <img src="images/placeholder.png" alt="Corset belt" />
-          <h4>Corset belt</h4>
-          <p>Orangered</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Hellorso shawl">
-          <img src="images/placeholder.png" alt="Hellorso shawl" />
-          <h4>Hellorso shawl</h4>
-          <p>Camel</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Victorian poke hat">
-          <img src="images/placeholder.png" alt="Victorian poke hat" />
-          <h4>Victorian poke hat</h4>
-          <p>Brown</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-
-        <article class="card" data-name="Somatchi socks">
-          <img src="images/placeholder.png" alt="Somatchi socks" />
-          <h4>Somatchi socks</h4>
-          <p>Cream</p>
-          <div class="price"></div>
-          <div class="actions"><button class="btn add-cart">Add to cart</button></div>
-        </article>
-      </div>
-      <a class="view-all" href="products.html?category=Accessories">VIEW ALL</a>
-    </section>
-
-    <!-- Repeat similar blocks for Pants, Dresses, Outerwear, Accessories as needed -->
-  </main>
+    <button type="submit"
+      style="margin-top:1rem; background:#8d030b; border:none; color:#fff; font-weight:bold; padding:0.9rem 1.5rem; border-radius:8px; font-size:1rem; cursor:pointer;">
+      Send Message
+    </button>
+  </form>
+</section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p><a href="about-contactus.html" style="color: #fefefe;">About us / Contact us</a> | Privacy Policy | Terms of Use</p>
-    <p>© All rights reserved. 2025.</p>
+    <p>About us / Contact us | Privacy Policy | Terms of Use</p>
+    <p>© All rights reserved. 2025. M&M Vintage</p>
   </footer>
 
   <script>
-    // -------- SEARCH POPUP --------
+    // Contact form handler
+    document.getElementById("contactForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        fullname: form.fullname.value,
+        email: form.email.value,
+        message: form.message.value,
+      };
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      } else {
+        alert("❌ Failed to send message. Please try again.");
+      }
+    });
+
+     // -------- SEARCH POPUP --------
     const openSearch = document.getElementById('openSearch');
     const closeSearch = document.getElementById('closeSearch');
     const overlay = document.getElementById('searchOverlay');
@@ -688,49 +551,6 @@
       btn.textContent = 'Added!';
       setTimeout(() => btn.textContent = 'Add to cart', 800);
     });
-
-  /*
-  // Fetch from your backend
-  fetch("/api/products")
-    .then(res => res.json())
-    .then(products => {
-      products.forEach(product => {
-        // Match by name
-        const priceDiv = document.querySelector(
-          `.price[data-name="${product.name}"]`
-        );
-        if (priceDiv) {
-          priceDiv.textContent = `NZD $${product.price.toFixed(2)}`;
-        }
-      });
-    })
-    .catch(err => console.error("Failed to load product prices:", err));
-    */
-   const formatter = new Intl.NumberFormat("en-NZ", {
-  style: "currency",
-  currency: "NZD",
-});
-
-fetch("/api/products")
-  .then(res => res.json())
-  .then(products => {
-    products.forEach(product => {
-      const card = document.querySelector(`.card[data-name="${product.name}"]`);
-      if (card) {
-        const priceDiv = card.querySelector(".price");
-        if (priceDiv) priceDiv.textContent = formatter.format(product.price);
-
-        const img = card.querySelector("img");
-        if (img && product.images?.length > 0) {
-          img.src = product.images[0];
-          img.alt = product.name;
-        }
-      }
-    });
-  })
-  .catch(err => console.error("Failed to load product data:", err));
-
-
 
   </script>
 </body>
