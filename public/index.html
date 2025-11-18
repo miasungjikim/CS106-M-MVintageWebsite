@@ -460,7 +460,7 @@
           <div class="actions"><button class="btn add-cart">Add to cart</button></div>
         </article>
 
-        <article class="card"  data-name="Dotted shirt">
+        <article class="card" data-name="Dotted shirt">
           <img src="images/placeholder.png" alt="Dotted shirt" />
           <h4>Dotted shirt</h4>
           <p>Chili Red</p>
@@ -475,7 +475,7 @@
     <section class="category" id="pants">
       <h2>Pants</h2>
       <div class="grid">
-        <article class="card"  data-name="Proclaimer pant">
+        <article class="card" data-name="Proclaimer pant">
           <img src="images/placeholder.png" alt="Proclaimer pant" />
           <h4>Proclaimer pant</h4>
           <p>Taupe moss</p>
@@ -515,7 +515,7 @@
       <h2>Dresses</h2>
       <div class="grid">
         <article class="card" data-name="Checkered dress">
-          <img src="images/placeholder.png"  alt="Checkered dress" />
+          <img src="images/placeholder.png" alt="Checkered dress" />
           <h4>Checkerd dress</h4>
           <p>Red</p>
           <div class="price"></div>
@@ -570,7 +570,7 @@
         </article>
 
         <article class="card" data-name="Ulster coat">
-          <img src="images/placeholder.png" alt="Ulster coat"/>
+          <img src="images/placeholder.png" alt="Ulster coat" />
           <h4>Ulster coat</h4>
           <p>Green</p>
           <div class="price"></div>
@@ -632,7 +632,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p><a href="about-contactus.html" style="color: #fefefe;">About us / Contact us</a> | Privacy Policy | Terms of Use</p>
+    <p><a href="./about-us.html" style="color: #fefefe;">About us / Contact us</a> | Privacy Policy | Terms of Use</p>
     <p>© All rights reserved. 2025.</p>
   </footer>
 
@@ -689,46 +689,46 @@
       setTimeout(() => btn.textContent = 'Add to cart', 800);
     });
 
-  /*
-  // Fetch from your backend
-  fetch("/api/products")
-    .then(res => res.json())
-    .then(products => {
-      products.forEach(product => {
-        // Match by name
-        const priceDiv = document.querySelector(
-          `.price[data-name="${product.name}"]`
-        );
-        if (priceDiv) {
-          priceDiv.textContent = `NZD $${product.price.toFixed(2)}`;
-        }
-      });
-    })
-    .catch(err => console.error("Failed to load product prices:", err));
-    */
-   const formatter = new Intl.NumberFormat("en-NZ", {
-  style: "currency",
-  currency: "NZD",
-});
-
-fetch("/api/products")
-  .then(res => res.json())
-  .then(products => {
-    products.forEach(product => {
-      const card = document.querySelector(`.card[data-name="${product.name}"]`);
-      if (card) {
-        const priceDiv = card.querySelector(".price");
-        if (priceDiv) priceDiv.textContent = formatter.format(product.price);
-
-        const img = card.querySelector("img");
-        if (img && product.images?.length > 0) {
-          img.src = product.images[0];
-          img.alt = product.name;
-        }
-      }
+    /*
+    // Fetch from your backend
+    fetch("/api/products")
+      .then(res => res.json())
+      .then(products => {
+        products.forEach(product => {
+          // Match by name
+          const priceDiv = document.querySelector(
+            `.price[data-name="${product.name}"]`
+          );
+          if (priceDiv) {
+            priceDiv.textContent = `NZD $${product.price.toFixed(2)}`;
+          }
+        });
+      })
+      .catch(err => console.error("Failed to load product prices:", err));
+      */
+    const formatter = new Intl.NumberFormat("en-NZ", {
+      style: "currency",
+      currency: "NZD",
     });
-  })
-  .catch(err => console.error("Failed to load product data:", err));
+
+    fetch("/api/products")
+      .then(res => res.json())
+      .then(products => {
+        products.forEach(product => {
+          const card = document.querySelector(`.card[data-name="${product.name}"]`);
+          if (card) {
+            const priceDiv = card.querySelector(".price");
+            if (priceDiv) priceDiv.textContent = formatter.format(product.price);
+
+            const img = card.querySelector("img");
+            if (img && product.images?.length > 0) {
+              img.src = product.images[0];
+              img.alt = product.name;
+            }
+          }
+        });
+      })
+      .catch(err => console.error("Failed to load product data:", err));
 
 
 

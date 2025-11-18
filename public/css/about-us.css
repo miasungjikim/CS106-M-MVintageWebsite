@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ECE6E2;
+    font-family: 'Poppins', sans-serif;
+    color: #3C2F2F;
+    height: 100% !important;
+}
+
+
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 60px auto 80px;
+    padding: 0 20px;
+}
+
+/* PAGE TITLE */
+.page-title {
+    font-family: "Poppins";
+    font-size: 48px;
+    color: #8D030B;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* RED DIVIDER */
+.divider {
+    width: 80px;
+    height: 4px;
+    background: #8D030B;
+    border-radius: 2px;
+    margin: 0 auto 50px;
+}
+
+/* CONTENT SECTIONS */
+.section {
+    margin-bottom: 60px;
+    padding: 25px 28px;
+    border-radius: 12px;
+    background: #fdfdfd;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section h2 {
+    font-family: 'Poppins';
+    font-size: 28px;
+    color: #8D030B;
+    margin-bottom: 12px;
+}
+
+.section p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* CONTACT BOX */
+.contact {
+    margin-top: 60px;
+    text-align: center;
+    padding: 35px 20px;
+    background: #8D030B;
+    color: #ECE6E2;
+    border-radius: 12px;
+}
+
+.contact h2 {
+    font-family: "Poppins";
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* FADE ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CONTACT FIX */
+.contact {
+    margin: 0 auto 0 auto !important;
+    display: block;
+}
+
+/* FOOTER & BODY FIX */
+body,
+footer {
+    margin: 0;
+    padding: 0;
+    background: #ECE6E2;
+    /* 전체톤 유지 */
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+
+    .page-title {
+        font-size: 34px;
+    }
+
+    .section {
+        padding: 20px 18px;
+        margin-bottom: 45px;
+    }
+
+    .section h2 {
+        font-size: 23px;
+    }
+
+    .section p {
+        font-size: 14px;
+    }
+
+    .contact h2 {
+        font-size: 22px;
+    }
+}
+
+html,
+body {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+footer {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+* {
+    min-height: 0 !important;
+}
