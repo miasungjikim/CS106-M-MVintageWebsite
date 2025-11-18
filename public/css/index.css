@@ -1,0 +1,236 @@
+.home-main {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.intro {
+    text-align: center;
+    padding: 200px 20px 160px;
+}
+
+.welcome-user {
+    font-size: 32px !important;
+    font-weight: 600;
+    margin-top: 40px;
+    text-align: center;
+    color: #8D030B !important;
+    /* letter-spacing: 0.2px; */
+    animation: introFadeUp 4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 62px;
+    font-weight: 600;
+    color: #8D030B;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    animation: introFadeUp 4s ease-out;
+}
+
+.intro p {
+    font-size: 24px;
+    color: #3C2F2F;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: introFadeUp 4s ease-out;
+}
+
+@keyframes introFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.section-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #8D030B;
+    margin: 20px 0 32px;
+
+}
+
+
+.categories {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cat-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #3C2F2F;
+    background-color: #E3D8D1;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E3D8D1;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cat-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.cat-card span {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.popular {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 80px;
+}
+
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.popular-card {
+    background-color: #E3D8D1;
+    border-radius: 16px;
+    border: 1px solid #E3D8D1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.popular-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.popular-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.popular-card h3 {
+    margin: 12px 14px 4px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.popular-card .price {
+    margin: 0 14px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8D030B;
+}
+
+.about-short {
+    text-align: center;
+    padding: 60px 20px 80px;
+    background-color: #F3EBE4;
+}
+
+.about-short h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #8D030B;
+    margin-bottom: 8px;
+}
+
+.about-short p {
+    font-size: 16px;
+    color: #3C2F2F;
+    max-width: 600px;
+    margin: 10px auto 22px;
+    line-height: 1.6;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 18px 80px;
+    background-color: #8D030B;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+    margin-top: 24px;
+}
+
+.about-btn:hover {
+    background-color: #3C2F2F;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .intro {
+        padding: 100px 16px 60px;
+    }
+
+    .intro h1 {
+        font-size: 24px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .cat-img {
+        height: 220px;
+    }
+
+    .popular-card img {
+        height: 240px;
+    }
+
+    .about-short {
+        padding: 50px 16px 60px;
+    }
+}

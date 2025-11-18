@@ -19,6 +19,7 @@
 
     .card h2 {
         padding: 40px 0px;
+        color: #8D030B;
     }
 
     .card .field {
@@ -56,7 +57,7 @@
         border-radius: 10px;
         margin-top: 20px;
         margin-left: 70px;
-
+        font-weight: 600;
         cursor: pointer;
         /* margin: 90px auto 0; */
     }
@@ -83,7 +84,87 @@
 
 /* Mobile */
 @media screen and (max-width: 768px) {
+
     body {
-        background-color: green;
+        background-color: #ECE6E2;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+        background-color: #fff;
+        border-radius: 14px;
+        margin: 80px auto 120px;
+        padding: 30px 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+        font-family: 'Poppins';
+        color: #8D030B;
+        text-align: left;
+    }
+
+    .card .field {
+        margin-bottom: 18px;
+        width: 100%;
+    }
+
+    .card .field label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 6px;
+        color: #3C2F2F;
+    }
+
+    .card .field input {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #3C2F2F;
+        background-color: transparent;
+        padding: 8px 0;
+        outline: none;
+        font-size: 15px;
+        color: #3C2F2F;
+    }
+
+    .card button {
+        width: 300px;
+        margin-left: 30px;
+        left: 0 auto;
+        padding: 12px 0;
+        background-color: #B8916E;
+        border-radius: 10px;
+        margin-top: 25px;
+        color: #3C2F2F;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+    }
+
+    .card button:hover {
+        background-color: #8D030B;
+        color: #fff;
+        transition: background-color 0.4s ease;
+    }
+
+    .footer-space {
+        height: 80px;
+    }
+
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 }
