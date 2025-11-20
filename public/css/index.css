@@ -33,7 +33,7 @@
 
 
 .intro h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Caprasimo', sans-serif;
     font-size: 62px;
     font-weight: 600;
     color: #8D030B;
@@ -43,10 +43,11 @@
 }
 
 .intro p {
+    font-family: 'Caprasimo', sans-serif;
     font-size: 24px;
     color: #3C2F2F;
     max-width: 640px;
-    margin: 0 auto;
+    margin: 40px auto;
     line-height: 1.6;
     animation: introFadeUp 4s ease-out;
 }
