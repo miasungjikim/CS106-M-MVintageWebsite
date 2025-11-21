@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("welcomeUser").textContent = `Welcome, ${user.fullname} !`;
     }
 
+
+
+
     // LOAD ALL PRODUCTS
     fetch("/api/products")
         .then(res => res.json())
@@ -50,4 +53,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-}); 
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+    } else {
+        loginBtn.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+    }
+
+    logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Logged out!");
+        window.location.reload();
+    });
+});

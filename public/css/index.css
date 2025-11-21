@@ -203,6 +203,11 @@
     background-color: #3C2F2F;
 }
 
+.login,
+.logout {
+    color: #fff;
+}
+
 
 @media screen and (max-width: 768px) {
 
