@@ -5,6 +5,7 @@ A full-stack vintage clothing shopping website built using HTML, CSS, JavaScript
 Includes admin product management, user browsing features, and image upload via Google Cloud Storage.
 
 ✨ Features
+
 👤 User Features
 Browse products by category
 View product detail page
@@ -47,6 +48,7 @@ Orders	Order created when user clicks “Buy Now”
 
 
 📁 Project Structure (Simplified)
+```
 project/
  ├── models/
  │    ├── User.js
@@ -60,3 +62,4 @@ project/
  ├── server.js
  ├── .env
  └── package.json
+```
